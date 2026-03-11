@@ -37,12 +37,14 @@ const Footer = () => {
             <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '100%', background: 'radial-gradient(circle at 50% 100%, rgba(0, 210, 255, 0.03) 0%, transparent 70%)', zIndex: 0 }} />
 
             {/* Main Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '60px', marginBottom: '60px', position: 'relative', zIndex: 1 }}>
+            <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', marginBottom: '60px', position: 'relative', zIndex: 1 }}>
 
                 {/* Brand */}
                 <div style={{ maxWidth: '360px' }}>
                     <div onClick={() => { navigate('/'); scrollToTop(); }} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', cursor: 'pointer' }}>
-                        <Trophy size={28} fill="var(--chalo-blue)" color="var(--chalo-blue)" />
+                        <div style={{ width: '38px', height: '38px', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.12)', flexShrink: 0 }}>
+                            <img src="/logo.jpeg" alt="Chaloo Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        </div>
                         <span style={{ fontSize: '1.6rem', fontWeight: '950', color: 'white', letterSpacing: '-0.04em' }}>
                             CHALOO<span style={{ color: 'var(--chalo-blue)' }}>.</span>
                         </span>
@@ -123,6 +125,12 @@ const Footer = () => {
                     color: white !important;
                     opacity: 1 !important;
                     transform: translateX(5px);
+                }
+                @media (max-width: 900px) {
+                    .footer-grid { grid-template-columns: repeat(2, 1fr) !important; }
+                }
+                @media (max-width: 480px) {
+                    .footer-grid { grid-template-columns: 1fr !important; }
                 }
             `}</style>
         </footer>
