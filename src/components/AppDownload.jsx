@@ -1,151 +1,122 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Smartphone, Zap, Shield, ChevronRight } from 'lucide-react';
 
 const AppDownload = () => {
     return (
-        <section style={{
-            background: 'var(--soft-bg)',
-            padding: '60px 24px 80px',
+        <section id="download" style={{
+            background: 'var(--chalo-bg)',
+            padding: '120px 6%',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             position: 'relative',
             overflow: 'hidden',
         }}>
-            {/* Ambient glow */}
+            {/* Ambient cinematic glow */}
             <div style={{
-                position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)',
-                width: '800px', height: '400px',
-                background: 'radial-gradient(ellipse, rgba(255,0,127,0.06) 0%, transparent 70%)',
-                filter: 'blur(60px)', pointerEvents: 'none'
+                position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+                width: '1000px', height: '600px',
+                background: 'radial-gradient(circle, rgba(0, 210, 255, 0.04) 0%, transparent 70%)',
+                zIndex: 0, pointerEvents: 'none'
             }} />
 
-            {/* Wrapper: relative so buttons can be absolutely positioned over the image */}
             <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="app-download-wrapper"
+                transition={{ duration: 1, ease: "easeOut" }}
                 style={{
                     position: 'relative',
                     width: '100%',
-                    maxWidth: '900px',
-                    borderRadius: '24px',
-                    overflow: 'visible',
+                    maxWidth: '1200px',
+                    borderRadius: '48px',
+                    overflow: 'hidden',
+                    background: 'rgba(2, 11, 25, 0.6)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid var(--border-glass)',
+                    boxShadow: '0 50px 100px rgba(0,0,0,0.4)',
+                    zIndex: 1
                 }}
             >
-                {/* Banner Image */}
                 <div style={{
-                    width: '100%',
-                    borderRadius: '24px',
-                    overflow: 'hidden',
-                    boxShadow: '0 24px 80px -10px rgba(0,0,0,0.12)',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                    alignItems: 'center',
                 }}>
-                    <img
-                        src="/banner.png"
-                        alt="Little Hearts – hi there! Enjoy 30% off on every coin package"
-                        style={{ width: '100%', height: 'auto', display: 'block' }}
-                    />
+                    {/* Content Section */}
+                    <div style={{ padding: '80px 10%', color: 'white' }}>
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
+                            <div style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '10px',
+                                color: 'var(--chalo-blue)',
+                                background: 'rgba(0, 210, 255, 0.1)',
+                                padding: '8px 20px',
+                                borderRadius: '100px',
+                                fontSize: '0.75rem',
+                                fontWeight: '900',
+                                marginBottom: '24px',
+                                letterSpacing: '0.1em'
+                            }}>
+                                <Smartphone size={14} /> DOWNLOAD APP
+                            </div>
+
+                            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', fontWeight: '950', marginBottom: '24px', lineHeight: 1, letterSpacing: '-0.05em' }}>
+                                Train like a <br />
+                                <span className="text-gradient">Professional.</span>
+                            </h2>
+                            <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '40px', maxWidth: '450px', fontWeight: '500', lineHeight: 1.6 }}>
+                                Get the CHALOO app for real-time connection requests and instant updates on your sports journey.
+                            </p>
+
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
+                                <a href="#" style={{ textDecoration: 'none' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 24px', background: 'white', color: 'var(--chalo-navy)', borderRadius: '16px', fontWeight: '900', transition: 'all 0.3s ease' }} className="cta-store">
+                                        <Smartphone size={20} /> App Store
+                                    </div>
+                                </a>
+                                <a href="#" style={{ textDecoration: 'none' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 24px', background: 'rgba(255,255,255,0.05)', color: 'white', borderRadius: '16px', fontWeight: '900', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }} className="cta-store">
+                                        <ChevronRight size={20} /> Play Store
+                                    </div>
+                                </a>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Image Section */}
+                    <div style={{ height: '100%', minHeight: '400px', position: 'relative', overflow: 'hidden' }}>
+                        <img
+                            src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=1500"
+                            alt="CHALOO App"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                        />
+                        <div style={{
+                            position: 'absolute',
+                            inset: 0,
+                            background: 'linear-gradient(to right, rgba(2, 11, 25, 1) 0%, rgba(2, 11, 25, 0.4) 30%, transparent 100%)'
+                        }} />
+                    </div>
                 </div>
-
-                {/* Store Buttons — overlay top-right on desktop, below on mobile */}
-                <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.35 }}
-                    className="store-buttons"
-                    style={{
-                        position: 'absolute',
-                        top: '16px',
-                        right: '16px',
-                        display: 'flex',
-                        flexDirection: 'row',
-                        gap: '12px',
-                    }}
-                >
-                    {/* App Store */}
-                    <a
-                        href=""
-                        aria-label="Download on the App Store"
-                        className="store-btn"
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            padding: '10px 20px',
-                            background: 'rgba(0,0,0,0.82)',
-                            backdropFilter: 'blur(12px)',
-                            borderRadius: '14px',
-                            textDecoration: 'none',
-                            boxShadow: '0 6px 24px rgba(0,0,0,0.25)',
-                            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                            whiteSpace: 'nowrap',
-                        }}
-                        onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 14px 36px rgba(0,0,0,0.32)'; }}
-                        onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(0,0,0,0.25)'; }}
-                    >
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                        </svg>
-                        <div>
-                            <div style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.65)', fontWeight: '600', lineHeight: 1, marginBottom: '2px' }}>Download on the</div>
-                            <div style={{ fontSize: '1rem', color: 'white', fontWeight: '800', lineHeight: 1 }}>App Store</div>
-                        </div>
-                    </a>
-
-                    {/* Google Play */}
-                    <a
-                        href=""
-                        aria-label="Get it on Google Play"
-                        className="store-btn"
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            padding: '10px 20px',
-                            background: 'rgba(0,0,0,0.82)',
-                            backdropFilter: 'blur(12px)',
-                            borderRadius: '14px',
-                            textDecoration: 'none',
-                            boxShadow: '0 6px 24px rgba(0,0,0,0.25)',
-                            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                            whiteSpace: 'nowrap',
-                        }}
-                        onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 14px 36px rgba(0,0,0,0.32)'; }}
-                        onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(0,0,0,0.25)'; }}
-                    >
-                        <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.18 23.76c.37.21.78.24 1.16.1l12.37-7.14-2.68-2.69L3.18 23.76z" fill="#EA4335" />
-                            <path d="M20.47 10.26 17.3 8.43 14.3 11.4l3 3 3.17-1.83c.9-.52.9-1.8 0-2.31z" fill="#FBBC04" />
-                            <path d="M4.34.14C3.96 0 3.55.03 3.18.24L14.3 11.4l2.68-2.68L4.34.14z" fill="#4285F4" />
-                            <path d="M3.18.24C2.45.66 2 1.47 2 2.4v19.2c0 .93.45 1.74 1.18 2.16l11.12-11.36L3.18.24z" fill="#34A853" />
-                        </svg>
-                        <div>
-                            <div style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.65)', fontWeight: '600', lineHeight: 1, marginBottom: '2px' }}>Get it on</div>
-                            <div style={{ fontSize: '1rem', color: 'white', fontWeight: '800', lineHeight: 1 }}>Google Play</div>
-                        </div>
-                    </a>
-                </motion.div>
             </motion.div>
 
             <style>{`
-                /* Mobile: pull buttons out of overlay, place them below banner */
-                @media (max-width: 640px) {
-                    .store-buttons {
-                        position: static !important;
-                        margin-top: 20px;
-                        flex-direction: column !important;
-                        width: 100%;
-                        padding: 0 4px;
-                    }
-                    .store-btn {
-                        justify-content: center;
-                        width: 100% !important;
-                    }
-                    .app-download-wrapper {
-                        overflow: visible !important;
+                .cta-store:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                }
+                @media (max-width: 900px) {
+                    div[style*="gridTemplateColumns"] { grid-template-columns: 1fr !important; }
+                    div[style*="padding: 80px 10%"] { padding: 60px 8% !important; }
+                    div[style*="height: 100%"] { height: 300px !important; order: -1; }
+                    div[style*="background: linear-gradient"] { 
+                        background: linear-gradient(to bottom, rgba(2, 11, 25, 1) 0%, transparent 100%) !important; 
                     }
                 }
             `}</style>

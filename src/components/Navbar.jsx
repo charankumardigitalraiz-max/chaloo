@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -10,9 +10,10 @@ const Navbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const width = useTransform(scrollY, [0, 100], ['100%', '90%']);
-    const top = useTransform(scrollY, [0, 100], ['0px', '15px']);
-    const borderRadius = useTransform(scrollY, [0, 100], ['0px', '20px']);
+    const width = useTransform(scrollY, [0, 100], ['100%', '92%']);
+    const top = useTransform(scrollY, [0, 100], ['0px', '20px']);
+    const borderRadius = useTransform(scrollY, [0, 100], ['0px', '24px']);
+    const shadow = useTransform(scrollY, [0, 100], ['none', '0 20px 40px rgba(0,0,0,0.3)']);
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -37,7 +38,8 @@ const Navbar = () => {
         { name: 'Home', action: () => { if (location.pathname === '/') { window.scrollTo({ top: 0, behavior: 'smooth' }); } else { navigate('/'); } } },
         { name: 'Platform', action: () => scrollToSection('zones') },
         { name: 'Features', action: () => scrollToSection('features') },
-        { name: 'About Us', action: () => navigate('/about') },
+        { name: 'Explore', action: () => navigate('/explore') },
+        { name: 'About', action: () => navigate('/about') },
     ];
 
     return (
@@ -46,61 +48,60 @@ const Navbar = () => {
                 width: width,
                 top: top,
                 borderRadius: borderRadius,
-                height: '70px',
+                height: '76px',
                 left: '50%',
                 x: '-50%',
                 position: 'fixed',
                 zIndex: 100,
-                padding: '0 4%',
+                padding: '0 5%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.92)' : 'transparent',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
-                borderBottom: isScrolled ? '1px solid rgba(0,0,0,0.05)' : 'none',
-                boxShadow: isScrolled ? '0 10px 30px rgba(0,0,0,0.06)' : 'none',
-                transition: 'all 0.3s ease'
+                backgroundColor: isScrolled ? 'rgba(15, 23, 42, 0.8)' : 'transparent',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                border: isScrolled ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                boxShadow: shadow,
+                transition: 'background-color 0.4s ease, border 0.4s ease'
             }}
         >
             {/* Branding */}
             <div
-                style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}
+                style={{ display: 'flex', alignItems: 'center', gap: '14px', cursor: 'pointer' }}
                 onClick={() => navigate('/')}
             >
-                <div style={{ width: '50px', height: '50px', borderRadius: '10px', overflow: 'hidden', }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <img src="/logo.jpeg" alt="Chaloo Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <span style={{
-                    fontSize: 'clamp(1.1rem, 4vw, 1.5rem)',
+                    fontSize: '1.4rem',
                     fontWeight: '950',
-                    color: isScrolled ? 'var(--chalo-navy)' : 'white',
-                    transition: 'color 0.3s ease',
-                    letterSpacing: '-0.04em',
+                    color: 'white',
+                    letterSpacing: '-0.05em',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '3px'
                 }}>
                     CHALOO<span style={{ color: 'var(--chalo-blue)' }}>.</span>
                 </span>
             </div>
 
             {/* Desktop Navigation */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '36px' }} className="desktop-links">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }} className="desktop-links">
                 {navLinks.map((link) => (
                     <div
                         key={link.name}
                         onClick={link.action}
                         style={{
-                            fontSize: '0.9rem',
-                            fontWeight: '700',
-                            color: 'var(--chalo-blue)',
-                            // textShadow: isScrolled ? 'none' : '0 1px 4px rgba(0,0,0,0.4)',
+                            fontSize: '0.85rem',
+                            fontWeight: '800',
+                            color: 'rgba(255,255,255,0.7)',
                             cursor: 'pointer',
-                            transition: 'color 0.2s ease'
+                            transition: 'color 0.3s ease',
+                            letterSpacing: '0.02em',
+                            textTransform: 'uppercase'
                         }}
-                    // onMouseEnter={e => e.currentTarget.style.color = 'var(--chalo-blue)'}
-                    // onMouseLeave={e => e.currentTarget.style.color = isScrolled ? 'var(--chalo-slate)' : 'white'}
+                        onMouseEnter={e => e.currentTarget.style.color = 'white'}
+                        onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
                     >
                         {link.name}
                     </div>
@@ -108,33 +109,35 @@ const Navbar = () => {
             </div>
 
             {/* CTA + Mobile Toggle */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <button
                     style={{
-                        padding: '10px 22px',
+                        padding: '12px 24px',
                         fontSize: '0.85rem',
                         background: 'var(--chalo-blue)',
-                        color: 'white',
+                        color: 'var(--chalo-navy)',
                         borderRadius: '50px',
-                        fontWeight: '800',
+                        fontWeight: '900',
                         border: 'none',
                         cursor: 'pointer',
-                        boxShadow: '0 8px 20px rgba(59,130,246,0.3)',
+                        boxShadow: '0 10px 25px rgba(0,210,255,0.25)',
                         display: 'flex',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        gap: '8px',
+                        transition: 'all 0.3s ease'
                     }}
                     className="nav-cta-button"
                     onClick={() => navigate('/contact')}
                 >
-                    Get in Touch
+                    Get in Touch <ArrowRight size={14} />
                 </button>
 
                 <div
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    style={{ cursor: 'pointer', color: isScrolled ? 'var(--chalo-navy)' : 'white', transition: 'color 0.3s ease' }}
+                    style={{ cursor: 'pointer', color: 'white' }}
                     className="mobile-toggle"
                 >
-                    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </div>
             </div>
 
@@ -142,21 +145,23 @@ const Navbar = () => {
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -16 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -16 }}
+                        initial={{ opacity: 0, scale: 0.95, y: -20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.95, y: -20 }}
                         style={{
                             position: 'absolute',
-                            top: '80px',
-                            left: '5%',
-                            right: '5%',
-                            background: 'white',
-                            borderRadius: '20px',
-                            padding: '28px 32px',
+                            top: '90px',
+                            left: '4%',
+                            right: '4%',
+                            background: 'rgba(15, 23, 42, 0.98)',
+                            backdropFilter: 'blur(20px)',
+                            borderRadius: '24px',
+                            padding: '32px',
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: '18px',
-                            boxShadow: '0 20px 50px rgba(0,0,0,0.1)',
+                            gap: '24px',
+                            boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
+                            border: '1px solid rgba(255,255,255,0.08)',
                             zIndex: 99
                         }}
                     >
@@ -164,9 +169,18 @@ const Navbar = () => {
                             <div
                                 key={link.name}
                                 onClick={() => { link.action(); setMobileMenuOpen(false); }}
-                                style={{ fontSize: '1.1rem', fontWeight: '800', color: 'var(--chalo-navy)', cursor: 'pointer' }}
+                                style={{ 
+                                    fontSize: '1.2rem', 
+                                    fontWeight: '900', 
+                                    color: 'white', 
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between'
+                                }}
                             >
                                 {link.name}
+                                <ArrowRight size={18} style={{ opacity: 0.3 }} />
                             </div>
                         ))}
                     </motion.div>
@@ -182,10 +196,14 @@ const Navbar = () => {
                     .mobile-toggle { display: none !important; }
                     .desktop-links { display: flex !important; }
                 }
-                @media (max-width: 480px) {
+                @media (max-width: 580px) {
                     .nav-cta-button { 
                         display: none !important; 
                     }
+                }
+                .nav-cta-button:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 15px 30px rgba(0,210,255,0.4);
                 }
             `}</style>
         </motion.nav>

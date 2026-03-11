@@ -1,55 +1,57 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FileText, ArrowLeft, ChevronDown, CheckCircle, Search, ShieldAlert, Gavel, Scale, Copyright } from 'lucide-react';
+import { FileText, ArrowLeft, ChevronDown, CheckCircle, Search, ShieldAlert, Gavel, Scale, Copyright, ShieldCheck, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const AccordionItem = ({ title, icon: Icon, children, isOpen, onClick }) => {
     return (
         <div style={{
-            marginBottom: '16px',
-            background: isOpen ? 'var(--chalo-bg)' : 'white',
-            borderRadius: '16px',
-            border: `1px solid ${isOpen ? 'var(--chalo-blue)' : 'rgba(0,0,0,0.08)'}`,
+            marginBottom: '20px',
+            background: isOpen ? 'rgba(255, 255, 255, 0.02)' : 'rgba(15, 23, 42, 0.4)',
+            backdropFilter: 'blur(30px)',
+            borderRadius: '24px',
+            border: '1px solid',
+            borderColor: isOpen ? 'var(--chalo-blue)' : 'var(--border-glass)',
             overflow: 'hidden',
-            boxShadow: isOpen ? '0 10px 30px rgba(59,130,246,0.1)' : '0 2px 10px rgba(0,0,0,0.02)',
-            transition: 'all 0.3s ease'
+            transition: 'all 0.4s cubic-bezier(0.19, 1, 0.22, 1)'
         }}>
             <button
                 onClick={onClick}
                 style={{
                     width: '100%',
-                    padding: '24px',
+                    padding: '32px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     background: 'transparent',
                     border: 'none',
                     cursor: 'pointer',
-                    color: 'var(--chalo-navy)',
+                    color: 'white',
                     textAlign: 'left'
                 }}
             >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                     <div style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: '12px',
-                        background: isOpen ? 'var(--chalo-blue)' : 'rgba(59,130,246,0.1)',
+                        width: '48px',
+                        height: '48px',
+                        borderRadius: '16px',
+                        background: isOpen ? 'var(--chalo-blue)' : 'rgba(255, 255, 255, 0.03)',
                         color: isOpen ? 'white' : 'var(--chalo-blue)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        transition: 'all 0.3s ease'
+                        transition: 'all 0.3s ease',
+                        border: isOpen ? 'none' : '1px solid rgba(255, 255, 255, 0.08)'
                     }}>
-                        <Icon size={20} />
+                        <Icon size={22} />
                     </div>
-                    <span style={{ fontSize: '1.05rem', fontWeight: '700', letterSpacing: '-0.01em' }}>{title}</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: '800', letterSpacing: '-0.02em' }}>{title}</span>
                 </div>
                 <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                 >
-                    <ChevronDown size={24} color={isOpen ? 'var(--chalo-blue)' : 'var(--chalo-slate)'} />
+                    <ChevronDown size={24} color={isOpen ? 'var(--chalo-blue)' : 'rgba(255, 255, 255, 0.3)'} />
                 </motion.div>
             </button>
             <AnimatePresence>
@@ -58,14 +60,14 @@ const AccordionItem = ({ title, icon: Icon, children, isOpen, onClick }) => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        transition={{ duration: 0.4, ease: [0.19, 1, 0.22, 1] }}
                     >
                         <div style={{
-                            padding: '0 24px 32px 80px',
-                            color: 'var(--chalo-slate)',
+                            padding: '0 32px 40px 100px',
+                            color: 'var(--text-secondary)',
                             fontSize: '1.05rem',
                             lineHeight: 1.7,
-                            background: 'var(--chalo-bg)'
+                            fontWeight: '500'
                         }}>
                             {children}
                         </div>
@@ -85,221 +87,208 @@ const TermsConditions = () => {
     };
 
     return (
-        <div style={{ minHeight: '100vh', background: 'white', paddingBottom: '120px' }}>
+        <div style={{ minHeight: '100vh', background: 'var(--chalo-bg)', paddingBottom: '120px' }}>
 
-            {/* Tech Header */}
-            <div style={{
-                background: '#020617',
-                color: 'white',
-                padding: '30px 5% 80px',
-                position: 'relative',
-                overflow: 'hidden'
+            {/* Premium Header */}
+            <section style={{ 
+                paddingTop: '160px', 
+                paddingBottom: '120px', 
+                position: 'relative', 
+                overflow: 'hidden',
+                textAlign: 'center',
+                background: 'linear-gradient(to bottom, rgba(2, 6, 23, 0.4) 0%, var(--chalo-bg) 100%)'
             }}>
-                <div style={{ position: 'absolute', top: -100, right: '20%', width: 300, height: 300, background: 'var(--chalo-blue)', filter: 'blur(150px)', opacity: 0.3 }} />
-                <div style={{ position: 'absolute', bottom: -50, left: '10%', width: 250, height: 250, background: 'var(--chalo-emerald)', filter: 'blur(120px)', opacity: 0.2 }} />
-
-                <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+                {/* Background Glows */}
+                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '100%', background: 'radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.08) 0%, transparent 70%)', zIndex: 0 }} />
+                
+                <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 10, paddingInline: '6%' }}>
                     <button
                         onClick={() => navigate('/')}
                         style={{
                             display: 'inline-flex',
                             alignItems: 'center',
-                            gap: '8px',
-                            background: 'rgba(255,255,255,0.1)',
+                            gap: '10px',
+                            background: 'rgba(255,255,255,0.03)',
                             backdropFilter: 'blur(10px)',
-                            border: '1px solid rgba(255,255,255,0.15)',
-                            padding: '8px 16px',
-                            borderRadius: '50px',
+                            border: '1px solid var(--border-glass)',
+                            padding: '10px 24px',
+                            borderRadius: '100px',
                             cursor: 'pointer',
                             color: 'white',
-                            fontWeight: '600',
-                            fontSize: '0.9rem',
-                            transition: 'all 0.2s',
-                            marginBottom: '40px'
+                            fontWeight: '800',
+                            fontSize: '0.85rem',
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            marginBottom: '48px'
                         }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.background = 'rgba(255,255,255,0.2)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-                        }}
+                        className="btn-back-hub"
                     >
                         <ArrowLeft size={16} /> Back to Hub
                     </button>
 
-                    <div style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        color: 'var(--chalo-blue)',
-                        background: 'rgba(59, 130, 246, 0.1)',
-                        border: '1px solid rgba(59, 130, 246, 0.2)',
-                        padding: '6px 16px',
-                        borderRadius: '50px',
-                        fontWeight: '800',
-                        fontSize: '0.8rem',
-                        marginBottom: '20px'
-                    }}>
-                        <FileText size={16} /> EFFECTIVE MARCH 2024
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        style={{ 
+                            display: 'inline-flex', 
+                            alignItems: 'center', 
+                            gap: '10px', 
+                            color: 'var(--chalo-blue)', 
+                            background: 'rgba(0, 210, 255, 0.1)', 
+                            padding: '6px 20px', 
+                            borderRadius: '100px', 
+                            fontWeight: '900', 
+                            fontSize: '0.75rem', 
+                            marginBottom: '24px',
+                            border: '1px solid rgba(0, 210, 255, 0.15)',
+                            letterSpacing: '0.1em'
+                        }}
+                    >
+                        <FileText size={14} /> EFFECTIVE MARCH 2024
+                    </motion.div>
 
-                    <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '950', marginBottom: '20px', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
-                        Terms of Service
+                    <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: '950', color: 'white', marginBottom: '24px', letterSpacing: '-0.04em', lineHeight: 1 }}>
+                        Terms of <span className="text-gradient">Service.</span>
                     </h1>
 
-                    <p style={{ color: '#94A3B8', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '600px' }}>
-                        By joining CHALOO, you agree to our code of conduct for sports excellence. Review the rules that govern your participation in our ecosystem.
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto', fontWeight: '500' }}>
+                        Join the CHALOO ecosystem with a commitment to sporting excellence and professional conduct.
                     </p>
                 </div>
-            </div>
+            </section>
 
-            {/* Interactive Accordion Container */}
-            <div style={{ maxWidth: '900px', margin: '-40px auto 0', padding: '0 5%', position: 'relative', zIndex: 20 }}>
+            {/* Accordion Container */}
+            <div style={{ maxWidth: '950px', margin: '-60px auto 0', padding: '0 6%', position: 'relative', zIndex: 20 }}>
 
                 <AccordionItem
-                    title="1. Platform Eligibility"
+                    title="1. Enterprise Eligibility"
                     icon={CheckCircle}
                     isOpen={openSection === 0}
                     onClick={() => toggleSection(0)}
                 >
-                    <p style={{ marginBottom: '16px' }}>CHALOO is a professional network designed for athletes, coaches, and sports academies. To use our platform, you must meet the following criteria:</p>
-                    <ul style={{ paddingLeft: '20px', margin: 0, listStyleType: 'none' }}>
-                        <li style={{ paddingBottom: '12px', display: 'flex', gap: '12px' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--chalo-blue)', marginTop: '8px', flexShrink: 0 }} />
-                            <span><strong>Age Restriction:</strong> You must be at least 13 years old. Users under 18 require active parental or guardian consent.</span>
-                        </li>
-                        <li style={{ paddingBottom: '12px', display: 'flex', gap: '12px' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--chalo-blue)', marginTop: '8px', flexShrink: 0 }} />
-                            <span><strong>Verifiable Truth:</strong> Coaches and Academy representatives must provide accurate, verifiable credentials during onboarding.</span>
-                        </li>
-                        <li style={{ display: 'flex', gap: '12px' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--chalo-blue)', marginTop: '8px', flexShrink: 0 }} />
-                            <span><strong>Honest Profiles:</strong> You agree to provide honest information regarding your geographical location, skill level, and sporting history.</span>
-                        </li>
-                    </ul>
+                    <p style={{ marginBottom: '20px' }}>CHALOO is a specialized network for professional athletes and verified sports entities.</p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                        {[
+                            { label: 'Baseline Age', desc: 'Active users must be 13+. Legal minor participation requires verified parental bypass.' },
+                            { label: 'Credential Audit', desc: 'Coaches and Academies must undergo periodic credential verification.' },
+                            { label: 'Identity Integrity', desc: 'Prohibition of aliases; profiles must represent verified athletic entities.' }
+                        ].map((item, i) => (
+                            <div key={i} style={{ display: 'flex', gap: '16px' }}>
+                                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--chalo-blue)', marginTop: '10px', flexShrink: 0 }} />
+                                <span><strong style={{ color: 'white' }}>{item.label}:</strong> {item.desc}</span>
+                            </div>
+                        ))}
+                    </div>
                 </AccordionItem>
 
                 <AccordionItem
-                    title="2. Role of CHALOO"
+                    title="2. Facilitation Protocol"
                     icon={Search}
                     isOpen={openSection === 1}
                     onClick={() => toggleSection(1)}
                 >
-                    <p style={{ marginBottom: '16px' }}>CHALOO operates strictly as a digital facilitator. Our goal is to connect dedicated players with expert mentors.</p>
-                    <ul style={{ paddingLeft: '20px', margin: 0, listStyleType: 'none', color: 'var(--chalo-slate)' }}>
-                        <li style={{ paddingBottom: '12px', display: 'flex', gap: '12px' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--chalo-slate)', marginTop: '8px', flexShrink: 0 }} />
-                            <span>We are an intermediary—we do not directly employ the coaches or own the academies listed on our platform.</span>
-                        </li>
-                        <li style={{ paddingBottom: '12px', display: 'flex', gap: '12px' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--chalo-slate)', marginTop: '8px', flexShrink: 0 }} />
-                            <span>While we verify identities, we cannot guarantee the ultimate safety or outcome of in-person training sessions. Use standard precautions.</span>
-                        </li>
-                        <li style={{ display: 'flex', gap: '12px' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--chalo-slate)', marginTop: '8px', flexShrink: 0 }} />
-                            <span>Any professional contracts, training schedules, or long-term fee arrangements are solely between the involved parties.</span>
-                        </li>
-                    </ul>
+                    <p style={{ marginBottom: '20px' }}>Our role is strictly facilitative — connecting high-intent athletic talent with professional expertise.</p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                        {[
+                            'CHALOO acts as a neutral intermediary; we do not employ individual coaches directly.',
+                            'Users assume responsibility for in-person training dynamics outside the digital hub.',
+                            'Platform agreements do not constitute direct sporting contracts between parties.'
+                        ].map((item, i) => (
+                            <div key={i} style={{ display: 'flex', gap: '16px' }}>
+                                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--chalo-emerald)', marginTop: '10px', flexShrink: 0 }} />
+                                <span>{item}</span>
+                            </div>
+                        ))}
+                    </div>
                 </AccordionItem>
 
                 <AccordionItem
-                    title="3. Pay-to-Connect Economics"
+                    title="3. Connection Economics"
                     icon={Scale}
                     isOpen={openSection === 2}
                     onClick={() => toggleSection(2)}
                 >
-                    <p style={{ marginBottom: '16px' }}>To prevent spam and ensure high intent, CHALOO utilizes a specific payment model when sharing contact information.</p>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                        <div style={{ background: 'white', padding: '16px', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)' }}>
-                            <strong style={{ display: 'block', color: 'var(--chalo-navy)', marginBottom: '4px' }}>Connection Requests</strong>
-                            Players can browse and send initial requests to coaches or academies for free.
-                        </div>
-                        <div style={{ background: 'white', padding: '16px', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)' }}>
-                            <strong style={{ display: 'block', color: 'var(--chalo-navy)', marginBottom: '4px' }}>Payment Trigger</strong>
-                            A connection fee is only required if the receiving party accepts the request.
-                        </div>
-                        <div style={{ background: 'white', padding: '16px', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)' }}>
-                            <strong style={{ display: 'block', color: 'var(--chalo-navy)', marginBottom: '4px' }}>Non-Refundable Status</strong>
-                            Once contact info is successfully revealed to both parties, the connection fee is final.
-                        </div>
+                    <p style={{ marginBottom: '24px' }}>To preserve the elite nature of our network, we operate a selective connection model.</p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
+                        {[
+                            { title: 'Intent Request', desc: 'Browse and send initial communication packets at zero initial cost.' },
+                            { title: 'Activation Fee', desc: 'Required only upon mutual data release authorization.' },
+                            { title: 'Finality Clause', desc: 'Protocol fulfillment fees are non-refundable once contact data is released.' }
+                        ].map((item, i) => (
+                            <div key={i} style={{ padding: '24px', background: 'rgba(255,255,255,0.02)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                                <strong style={{ display: 'block', color: 'white', marginBottom: '8px', fontSize: '1rem' }}>{item.title}</strong>
+                                <span style={{ fontSize: '0.85rem', opacity: 0.8 }}>{item.desc}</span>
+                            </div>
+                        ))}
                     </div>
                 </AccordionItem>
 
                 <AccordionItem
-                    title="4. Community Conduct"
+                    title="4. Behavioral Termination"
                     icon={ShieldAlert}
                     isOpen={openSection === 3}
                     onClick={() => toggleSection(3)}
                 >
-                    <p style={{ marginBottom: '16px' }}>We maintain a <strong>zero-tolerance policy</strong> against behavior that undermines the integrity of our sports community.</p>
-                    <ul style={{ paddingLeft: '20px', margin: 0, listStyleType: 'none', color: 'var(--chalo-slate)' }}>
-                        <li style={{ paddingBottom: '12px', display: 'flex', gap: '12px' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#EF4444', marginTop: '8px', flexShrink: 0 }} />
-                            <span>Fake credentials, fake academy photos, or impersonating athletes is an instant ban.</span>
-                        </li>
-                        <li style={{ paddingBottom: '12px', display: 'flex', gap: '12px' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#EF4444', marginTop: '8px', flexShrink: 0 }} />
-                            <span>Harassment, discrimination, or abusive language will result in immediate termination.</span>
-                        </li>
-                        <li style={{ display: 'flex', gap: '12px' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#EF4444', marginTop: '8px', flexShrink: 0 }} />
-                            <span>Circumventing the Pay-to-Connect system by hiding phone numbers in public bios/photos is strictly prohibited.</span>
-                        </li>
-                    </ul>
-                </AccordionItem>
-
-                <AccordionItem
-                    title="5. Intellectual Property"
-                    icon={Copyright}
-                    isOpen={openSection === 4}
-                    onClick={() => toggleSection(4)}
-                >
-                    <p style={{ marginBottom: '16px' }}>All layout, design, branding (including the CHALOO logo), and proprietary algorithms of the platform are the exclusive intellectual property of CHALOO Sports.</p>
-                    <p style={{ margin: 0 }}>However, specific training modules, playbooks, or video feedback shared by coaches remain the intellectual property of those individual coaches, subject to any direct agreements they make with players.</p>
-                </AccordionItem>
-
-                <AccordionItem
-                    title="6. Termination Rules"
-                    icon={Gavel}
-                    isOpen={openSection === 5}
-                    onClick={() => toggleSection(5)}
-                >
-                    <p style={{ margin: 0 }}>We reserve the right to suspend or terminate your account without prior notice if you are found to be in violation of these Terms of Service. You may request account deletion at any time by contacting support, handling your data in accordance with our Privacy Policy.</p>
+                    <p style={{ marginBottom: '20px' }}>We maintain zero tolerance for behavior that compromises platform integrity.</p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                        {[
+                            'Ban on falsification of athletic performance data or coaching credentials.',
+                            'Zero tolerance for discriminatory conduct or non-professional interaction.',
+                            'Prohibition of "Direct-Bypass" — hiding contact info in public profile assets.'
+                        ].map((item, i) => (
+                            <div key={i} style={{ display: 'flex', gap: '16px' }}>
+                                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#EF4444', marginTop: '10px', flexShrink: 0 }} />
+                                <span>{item}</span>
+                            </div>
+                        ))}
+                    </div>
                 </AccordionItem>
 
                 {/* Dispute Card */}
                 <div style={{
-                    marginTop: '40px',
-                    padding: '32px',
-                    background: 'linear-gradient(135deg, rgba(59,130,246,0.05) 0%, rgba(2,6,23,0.05) 100%)',
-                    borderRadius: '24px',
-                    border: '1px solid rgba(226,232,240,0.8)',
+                    marginTop: '60px',
+                    padding: '48px',
+                    background: 'rgba(15, 23, 42, 0.4)',
+                    backdropFilter: 'blur(30px)',
+                    borderRadius: '40px',
+                    border: '1px solid var(--border-glass)',
                     display: 'flex',
+                    flexWrap: 'wrap',
                     alignItems: 'center',
-                    gap: '24px'
+                    gap: '32px',
+                    boxShadow: '0 40px 80px rgba(0,0,0,0.3)'
                 }}>
                     <div style={{
-                        width: '60px',
-                        height: '60px',
-                        borderRadius: '20px',
-                        background: 'white',
-                        boxShadow: '0 10px 20px rgba(0,0,0,0.05)',
+                        width: '72px',
+                        height: '72px',
+                        borderRadius: '24px',
+                        background: 'rgba(255, 255, 255, 0.03)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        flexShrink: 0
+                        color: 'white',
+                        flexShrink: 0,
+                        border: '1px solid var(--border-glass)'
                     }}>
-                        <Gavel size={28} color="var(--chalo-navy)" />
+                        <Gavel size={32} />
                     </div>
-                    <div>
-                        <h3 style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--chalo-navy)', marginBottom: '8px' }}>Dispute Resolution</h3>
-                        <p style={{ margin: 0, color: 'var(--chalo-slate)' }}>
-                            For any disputes regarding payments or connection quality, please contact our support team within 48 hours of your interaction via <a href="mailto:chalosportsapp@gmail.com" style={{ color: 'var(--chalo-blue)', fontWeight: '700', textDecoration: 'none' }}>chalosportsapp@gmail.com</a>.
+                    <div style={{ flex: 1, minWidth: '280px' }}>
+                        <h3 style={{ fontSize: '1.6rem', fontWeight: '950', color: 'white', marginBottom: '12px', letterSpacing: '-0.02em' }}>Dispute Resolution</h3>
+                        <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6 }}>
+                            For payment anomalies or connection quality audits, contact our specialized protocol team within 48 hours at <a href="mailto:chalosportsapp@gmail.com" style={{ color: 'var(--chalo-blue)', fontWeight: '800', textDecoration: 'none' }}>chalosportsapp@gmail.com</a>.
                         </p>
                     </div>
                 </div>
 
             </div>
+
+            {/* Custom Styles */}
+            <style>{`
+                .btn-back-hub:hover {
+                    background: rgba(255, 255, 255, 0.08) !important;
+                    transform: translateX(-5px);
+                    border-color: rgba(255, 255, 255, 0.2) !important;
+                }
+            `}</style>
         </div>
     );
 };

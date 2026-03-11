@@ -3,6 +3,7 @@ import Hero from './Hero';
 import Zones from './Zones';
 import Features from './Features';
 import Community from './Community';
+import AppDownload from './AppDownload';
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
             <Hero />
             <Zones />
             <Features />
+            <AppDownload />
             <Community />
         </>
     );

@@ -1,128 +1,163 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, School, Zap, Shield, Target, Activity, Star, Users } from 'lucide-react';
+import { Trophy, School, Zap, Shield, Star, CheckCircle2 } from 'lucide-react';
 
 const sportsFeatures = [
     {
-        icon: <Trophy size={24} />,
+        icon: <Trophy size={22} />,
         title: "Verified Coaches",
-        desc: "Browse certified, experienced sports mentors. Review their profile, sports speciality, and fee before connecting.",
-        color: "var(--chalo-blue)"
+        desc: "High-performance mentorship from certified professional coaches across all major sporting disciplines.",
+        accent: "var(--chalo-blue)"
     },
     {
-        icon: <School size={24} />,
+        icon: <School size={22} />,
         title: "Academy Directory",
-        desc: "Search top sports academies near you. View facilities, available spots, training programs, and connect instantly.",
-        color: "var(--chalo-emerald)"
+        desc: "Surgical precision in finding the right academy based on facilities, location, and proven track records.",
+        accent: "var(--chalo-emerald)"
     },
     {
-        icon: <Zap size={24} />,
-        title: "All Sports Covered",
-        desc: "Cricket, Badminton, Football, Chess, Athletics and more — CHALOO covers every major sport across India.",
-        color: "var(--chalo-gold)"
+        icon: <Zap size={22} />,
+        title: "All Sports Coverage",
+        desc: "From mainstream athletics to niche strategic games — CHALOO bridges the gap for every sports lover.",
+        accent: "var(--chalo-gold)"
     },
     {
-        icon: <Shield size={24} />,
-        title: "Pay-to-Connect",
-        desc: "When a player and coach agree to connect, both pay a small fee. Only then are contact numbers shared — 100% secure.",
-        color: "var(--chalo-navy)"
+        icon: <Shield size={22} />,
+        title: "Secure Ecosystem",
+        desc: "A proprietary verification system that ensures absolute safety and transparency for the entire community.",
+        accent: "#F43F5E" // Rose for security contrast
     }
 ];
 
 const Features = () => {
     return (
         <section id="features" style={{
-            padding: '72px 8%',
-            background: 'white',
+            padding: '90px 6%',
+            background: 'var(--chalo-navy)',
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            borderTop: '1px solid var(--border-glass)'
         }}>
-            <div style={{ maxWidth: '1400px', marginInline: 'auto' }}>
-                <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            {/* Background cinematic glows */}
+            <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(0, 210, 255, 0.05) 0%, transparent 70%)', zIndex: 0 }} />
+
+            <div style={{ maxWidth: '1400px', marginInline: 'auto', position: 'relative', zIndex: 1 }}>
+                <div style={{ marginBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         style={{
                             display: 'inline-flex',
                             alignItems: 'center',
-                            gap: '8px',
+                            gap: '10px',
                             color: 'var(--chalo-blue)',
-                            background: 'rgba(59,130,246,0.05)',
-                            padding: '10px 24px',
-                            borderRadius: '50px',
-                            fontWeight: '800',
-                            fontSize: '0.9rem',
-                            marginBottom: '24px'
+                            background: 'rgba(0, 210, 255, 0.1)',
+                            padding: '8px 24px',
+                            borderRadius: '100px',
+                            fontWeight: '950',
+                            fontSize: '0.75rem',
+                            marginBottom: '24px',
+                            letterSpacing: '0.12em',
+                            textTransform: 'uppercase'
                         }}
                     >
-                        <Star size={16} fill="var(--chalo-blue)" color="var(--chalo-blue)" /> KEY FEATURES
+                        <Star size={14} fill="var(--chalo-blue)" /> WHY CHOOSE CHALOO
                     </motion.div>
+
                     <h2 style={{
-                        fontSize: 'clamp(2.2rem, 5vw, 3.2rem)',
+                        fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                         fontWeight: '950',
-                        color: 'var(--chalo-navy)',
+                        color: 'white',
                         marginBottom: '20px',
-                        letterSpacing: '-0.03em'
+                        letterSpacing: '-0.04em',
+                        lineHeight: 1
                     }}>
-                        What CHALOO <span style={{ color: 'var(--chalo-blue)' }}>Provides.</span>
+                        Platform <span className="text-gradient">Innovations.</span>
                     </h2>
                     <p style={{
-                        fontSize: '1.05rem',
-                        color: 'var(--chalo-slate)',
-                        maxWidth: '700px',
-                        marginInline: 'auto',
-                        lineHeight: 1.6
+                        fontSize: '1.2rem',
+                        color: 'var(--text-secondary)',
+                        maxWidth: '600px',
+                        lineHeight: 1.6,
+                        fontWeight: '500'
                     }}>
-                        CHALOO is a platform for connecting players, coaches, and academies in a secure, trusted sports ecosystem.
+                        Engineered to provide a seamless, secure, and world-class sports connection experience for India's growing athletic community.
                     </p>
                 </div>
 
-                <div style={{
+                <div className="features-grid" style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                    gap: '40px'
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: '24px'
                 }}>
                     {sportsFeatures.map((f, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1 }}
+                            transition={{ delay: idx * 0.1, duration: 0.7 }}
+                            className="feature-card"
                             style={{
-                                padding: '32px',
+                                padding: '40px 32px',
                                 borderRadius: '32px',
-                                background: 'var(--chalo-bg)',
-                                border: '1px solid rgba(0,0,0,0.03)',
-                                transition: 'all 0.3s ease'
+                                background: 'rgba(255, 255, 255, 0.015)',
+                                border: '1px solid var(--border-glass)',
+                                transition: 'all 0.4s cubic-bezier(0.19, 1, 0.22, 1)',
+                                position: 'relative',
+                                overflow: 'hidden',
+                                display: 'flex',
+                                flexDirection: 'column'
                             }}
-                            whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0,0,0,0.04)', background: 'white', borderColor: f.color + '33' }}
+                            whileHover={{
+                                y: -10,
+                                background: 'rgba(255, 255, 255, 0.03)',
+                                borderColor: 'rgba(255, 255, 255, 0.12)',
+                                boxShadow: '0 30px 60px rgba(0,0,0,0.3)'
+                            }}
                         >
+                            {/* Accent Glow on Hover */}
+                            <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: f.accent, opacity: 0.3 }} />
+
                             <div style={{
-                                width: '60px',
-                                height: '60px',
+                                width: '56px',
+                                height: '56px',
                                 borderRadius: '18px',
-                                background: 'white',
+                                background: 'rgba(255,255,255,0.03)',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                color: f.color,
-                                marginBottom: '24px',
-                                boxShadow: '0 10px 20px rgba(0,0,0,0.03)'
+                                color: f.accent,
+                                marginBottom: '28px',
+                                border: '1px solid rgba(255,255,255,0.06)'
                             }}>
-                                {React.cloneElement(f.icon, { size: 20 })}
+                                {f.icon}
                             </div>
-                            <h3 style={{ fontSize: '1.4rem', fontWeight: '900', color: 'var(--chalo-navy)', marginBottom: '12px', letterSpacing: '-0.02em' }}>{f.title}</h3>
-                            <p style={{ fontSize: '0.95rem', color: 'var(--chalo-slate)', lineHeight: 1.5, opacity: 0.9 }}>{f.desc}</p>
+
+                            <h3 style={{ fontSize: '1.4rem', fontWeight: '950', color: 'white', marginBottom: '12px', letterSpacing: '-0.02em', lineHeight: 1.2 }}>{f.title}</h3>
+                            <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: '500' }}>{f.desc}</p>
+
+                            <div style={{ marginTop: 'auto', paddingTop: '24px', display: 'flex', alignItems: 'center', gap: '8px', color: f.accent, fontSize: '0.75rem', fontWeight: '900', letterSpacing: '0.05em' }}>
+                                <CheckCircle2 size={16} /> ENTERPRISE READY
+                            </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
 
-            {/* Background elements */}
-            <div style={{ position: 'absolute', top: '10%', right: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, var(--chalo-blue)05 0%, transparent 70%)' }} />
-            <div style={{ position: 'absolute', bottom: '10%', left: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, var(--chalo-emerald)05 0%, transparent 70%)' }} />
+            <style>{`
+                @media (min-width: 1200px) {
+                    .features-grid {
+                        grid-template-columns: repeat(4, 1fr) !important;
+                    }
+                }
+                @media (max-width: 1199px) and (min-width: 768px) {
+                    .features-grid {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                    }
+                }
+            `}</style>
         </section>
     );
 };

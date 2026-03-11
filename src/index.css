@@ -1,16 +1,30 @@
 :root {
-  --chalo-navy: #0F172A;
-  --chalo-blue: #3B82F6;
+  /* Core Palette */
+  --chalo-navy: #020B19;       /* Deep Midnight */
+  --chalo-blue: #00D2FF;       /* Electric Cyan */
   --chalo-emerald: #10B981;
-  --chalo-gold: #F59E0B;
-  --chalo-bg: #F8FAFC;
-  --chalo-slate: #64748B;
-  --dark-text: #020617;
-  --light-text: #475569;
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --gradient-sports: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
-  --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  --chalo-gold: #FACC15;       /* Bright Sun */
+  --chalo-bg: #0F172A;         /* Slate Background */
+  --chalo-slate: #94A3B8;      /* Soft Muted Text */
+  
+  /* Text Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.45);
+  
+  /* Surfaces */
+  --surf-glass: rgba(255, 255, 255, 0.03);
+  --surf-glass-light: rgba(255, 255, 255, 0.05);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #00D2FF 0%, #3B82F6 100%);
+  --grad-dark: linear-gradient(180deg, #020B19 0%, #0F172A 100%);
+  
+  /* Shadow & Blur */
+  --shadow-premium: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
+  --shadow-neon: 0 10px 30px -5px rgba(0, 210, 255, 0.3);
+  --glass-blur: blur(24px);
   
   font-family: "Outfit", sans-serif;
   scroll-behavior: smooth;
@@ -20,84 +34,101 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-/* Default cursor */
-* {
   cursor: auto;
 }
 
 body {
-  background-color: var(--soft-bg);
-  color: var(--dark-text);
+  background-color: var(--chalo-navy);
+  color: var(--text-primary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Varela Round", sans-serif;
-  letter-spacing: -0.02em;
+h1, h2, h3, h4 {
+  font-family: "Outfit", sans-serif;
+  letter-spacing: -0.04em;
+  font-weight: 900;
 }
 
+/* Global Glass Class */
 .glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-float);
-}
-
-.btn-primary {
-  background: var(--gradient-electric);
-  color: white;
-  border: none;
-  padding: 14px 32px;
-  border-radius: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: var(--shadow-neon);
-}
-
-.btn-primary:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 15px 45px -5px rgba(255, 0, 127, 0.5);
+  background: var(--surf-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-premium);
 }
 
 .text-gradient {
-  background: var(--gradient-electric);
+  background: var(--grad-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* Buttons */
+.btn-primary {
+  background: var(--grad-primary);
+  color: white;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 18px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-neon);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px -5px rgba(0, 210, 255, 0.5);
+}
+
+.btn-secondary {
+  background: var(--surf-glass);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-glass);
+  color: white;
+  padding: 16px 36px;
+  border-radius: 18px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--surf-glass-light);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
 section {
-  padding: 80px 8%;
-  position: relative;
+  padding: 100px 6%;
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 60px 5%;
+    padding: 80px 5%;
   }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--soft-bg);
+  background: var(--chalo-navy);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gradient-electric);
+  background: var(--grad-primary);
   border-radius: 10px;
+  border: 3px solid var(--chalo-navy);
 }

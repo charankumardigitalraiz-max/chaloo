@@ -23,20 +23,44 @@ const AppPromo = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    style={{ width: '100%', position: 'relative' }}
+                    style={{ 
+                        width: '100%', 
+                        position: 'relative',
+                        borderRadius: '32px',
+                        overflow: 'hidden',
+                        boxShadow: '0 40px 80px -20px rgba(0,0,0,0.15)',
+                    }}
                     className="promo-container"
                 >
                     <img
-                        src="/banner.png"
-                        alt="Little Hearts App"
+                        src="https://images.unsplash.com/photo-1530549387634-e53529c7abd6?auto=format&fit=crop&q=80&w=1500"
+                        alt="CHALOO Sports Platform"
                         style={{
                             width: '100%',
-                            height: 'auto',
-                            borderRadius: '32px',
-                            boxShadow: '0 40px 80px -20px rgba(0,0,0,0.15)',
+                            height: '450px',
+                            objectFit: 'cover',
                             display: 'block'
                         }}
                     />
+
+                    {/* Banner Text Overlay */}
+                    <div style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(45deg, rgba(2,6,23,0.9) 0%, rgba(2,6,23,0.3) 100%)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        padding: '0 60px',
+                        textAlign: 'left'
+                    }}>
+                        <h2 style={{ color: 'white', fontSize: '2.8rem', fontWeight: '950', marginBottom: '12px', letterSpacing: '-0.03em' }}>
+                            Elevate Your <br /> <span style={{ color: 'var(--chalo-blue)' }}>Sports Journey</span>
+                        </h2>
+                        <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.1rem', maxWidth: '500px', fontWeight: '500' }}>
+                            Experience India's most advanced sports ecosystem. Verified talent, professional guidance.
+                        </p>
+                    </div>
 
                     {/* Store Buttons - Responsive Positioning */}
                     <div className="promo-buttons" style={{
