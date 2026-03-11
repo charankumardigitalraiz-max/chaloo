@@ -1,0 +1,103 @@
+:root {
+  --chalo-navy: #0F172A;
+  --chalo-blue: #3B82F6;
+  --chalo-emerald: #10B981;
+  --chalo-gold: #F59E0B;
+  --chalo-bg: #F8FAFC;
+  --chalo-slate: #64748B;
+  --dark-text: #020617;
+  --light-text: #475569;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --gradient-sports: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+  --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  
+  font-family: "Outfit", sans-serif;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Default cursor */
+* {
+  cursor: auto;
+}
+
+body {
+  background-color: var(--soft-bg);
+  color: var(--dark-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-float);
+}
+
+.btn-primary {
+  background: var(--gradient-electric);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-neon);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 45px -5px rgba(255, 0, 127, 0.5);
+}
+
+.text-gradient {
+  background: var(--gradient-electric);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+section {
+  padding: 80px 8%;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 5%;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--soft-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-electric);
+  border-radius: 10px;
+}
