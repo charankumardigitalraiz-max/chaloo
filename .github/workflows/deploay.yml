@@ -1,0 +1,24 @@
+name: Deploy Website
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to AWS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ubuntu
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ~/ChaloWebsiteCoach
+            git pull origin main
+            npm install
+            export NODE_OPTIONS="--max-old-space-size=2048"
+            npm run build
+            sudo rm -rf /var/www/website/*
+            sudo cp -r dist/* /var/www/website/
+            sudo chown -R www-data:www-data /var/www/website
+            sudo systemctl reload nginx
