@@ -18,7 +18,7 @@ jobs:
             npm install
             export NODE_OPTIONS="--max-old-space-size=2048"
             npm run build
-            sudo rm -rf /var/www/website/*
-            sudo cp -r dist/* /var/www/website/
-            sudo chown -R www-data:www-data /var/www/website
+            sudo rm -rf /var/www/chalowebsitecoach/*
+            sudo cp -r dist/* /var/www/chalowebsitecoach/
+            sudo chown -R www-data:www-data /var/www/chalowebsitecoach
             sudo systemctl reload nginx
