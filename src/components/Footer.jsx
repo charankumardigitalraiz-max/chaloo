@@ -54,14 +54,14 @@ const Footer = () => {
                     </p>
                     <div style={{ display: 'flex', gap: '12px' }}>
                         {[Instagram, Twitter, Facebook].map((Icon, i) => (
-                            <motion.a key={i} href="#" 
+                            <motion.a key={i} href="#"
                                 whileHover={{ y: -5, background: 'rgba(255,255,255,0.08)', borderColor: 'var(--chalo-blue)' }}
-                                style={{ 
-                                    color: 'white', 
-                                    background: 'rgba(255,255,255,0.03)', 
-                                    padding: '12px', 
-                                    borderRadius: '14px', 
-                                    display: 'flex', 
+                                style={{
+                                    color: 'white',
+                                    background: 'rgba(255,255,255,0.03)',
+                                    padding: '12px',
+                                    borderRadius: '14px',
+                                    display: 'flex',
                                     border: '1px solid var(--border-glass)',
                                     transition: 'all 0.3s ease'
                                 }}>
@@ -96,15 +96,16 @@ const Footer = () => {
                 <div>
                     <h4 style={{ color: 'var(--chalo-blue)', fontSize: '0.8rem', marginBottom: '24px', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Reach Us</h4>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        <a href="mailto:chalosportsapp@gmail.com" style={{ color: 'white', fontSize: '0.9rem', textDecoration: 'none', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '12px', transition: 'all 0.3s ease' }} className="footer-link">
-                            <Mail size={16} color="var(--chalo-blue)" /> chalosportsapp@gmail.com
+                        <a href="mailto:umanalli.123@gmail.com" style={{ color: 'white', fontSize: '0.9rem', textDecoration: 'none', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '12px', transition: 'all 0.3s ease' }} className="footer-link">
+                            <Mail size={16} color="var(--chalo-blue)" /> umanalli.123@gmail.com
                         </a>
                         <div style={{ color: 'white', fontSize: '0.9rem', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            <Phone size={16} color="var(--chalo-blue)" /> +91 7995135561
+                            <Phone size={16} color="var(--chalo-blue)" /> +91 8688047634
                         </div>
                         <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: '600', display: 'flex', alignItems: 'flex-start', gap: '12px', lineHeight: 1.5 }}>
                             <MapPin size={16} color="var(--chalo-blue)" style={{ marginTop: '2px', flexShrink: 0 }} />
-                            <span>Thorredu, AP, India - 533293</span>
+                            <span>H No-8-1-106/A/43, Vinobha Nagar, Shaikpet, Nagamma Temple,
+                                Golconda, Hyderabad - 500008, Telangana.</span>
                         </div>
                     </div>
                 </div>

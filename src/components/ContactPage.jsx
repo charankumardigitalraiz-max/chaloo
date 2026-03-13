@@ -6,32 +6,32 @@ const ContactPage = () => {
     return (
         <div style={{ background: 'var(--chalo-bg)', minHeight: '100vh', paddingBottom: '100px' }}>
             {/* Cinematic Header Section */}
-            <section style={{ 
-                paddingTop: '160px', 
-                paddingBottom: '120px', 
-                position: 'relative', 
+            <section style={{
+                paddingTop: '160px',
+                paddingBottom: '120px',
+                position: 'relative',
                 overflow: 'hidden',
                 textAlign: 'center',
                 background: 'linear-gradient(to bottom, rgba(2, 6, 23, 0.4) 0%, var(--chalo-bg) 100%)'
             }}>
                 {/* Background Glows */}
                 <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '100%', background: 'radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.08) 0%, transparent 70%)', zIndex: 0 }} />
-                
+
                 <div style={{ position: 'relative', zIndex: 1, paddingInline: '6%' }}>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6 }}
-                        style={{ 
-                            display: 'inline-flex', 
-                            alignItems: 'center', 
-                            gap: '10px', 
-                            color: 'var(--chalo-blue)', 
-                            background: 'rgba(0, 210, 255, 0.1)', 
-                            padding: '10px 24px', 
-                            borderRadius: '100px', 
-                            fontWeight: '900', 
-                            fontSize: '0.75rem', 
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '10px',
+                            color: 'var(--chalo-blue)',
+                            background: 'rgba(0, 210, 255, 0.1)',
+                            padding: '10px 24px',
+                            borderRadius: '100px',
+                            fontWeight: '900',
+                            fontSize: '0.75rem',
                             marginBottom: '32px',
                             border: '1px solid rgba(0, 210, 255, 0.15)',
                             letterSpacing: '0.1em'
@@ -39,8 +39,8 @@ const ContactPage = () => {
                     >
                         <MessageSquare size={14} fill="var(--chalo-blue)" /> GLOBAL SUPPORT
                     </motion.div>
-                    
-                    <motion.h1 
+
+                    <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
@@ -49,8 +49,8 @@ const ContactPage = () => {
                         Get in <br />
                         <span className="text-gradient">Touch.</span>
                     </motion.h1>
-                    
-                    <motion.p 
+
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -62,10 +62,10 @@ const ContactPage = () => {
             </section>
 
             <div style={{ maxWidth: '1400px', margin: '-40px auto 0', padding: '0 6%', position: 'relative', zIndex: 10 }}>
-                
+
                 {/* Main Grid: Info & Form */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '60px', marginBottom: '120px' }}>
-                    
+
                     {/* Info Column */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -75,20 +75,20 @@ const ContactPage = () => {
                         <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: '950', marginBottom: '48px', color: 'white', letterSpacing: '-0.04em' }}>Corporate <br />Channels</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
                             {[
-                                { icon: Mail, label: 'Enterprise Email', value: 'chalosportsapp@gmail.com', color: '#00D2FF' },
-                                { icon: Phone, label: 'Direct Hotline', value: '+91 7995135561', color: '#FACC15' },
-                                { icon: Globe, label: 'Global HQ', value: 'East Godavari, AP - 533293', color: '#10B981' }
+                                { icon: Mail, label: 'Enterprise Email', value: 'umanalli.123@gmail.com', color: '#00D2FF' },
+                                { icon: Phone, label: 'Direct Hotline', value: '+91 8688047634', color: '#FACC15' },
+                                { icon: Globe, label: 'Global HQ', value: 'H No-8-1-106/A/43, Vinobha Nagar, Shaikpet, Nagamma Temple, Golconda, Hyderabad - 500008, Telangana.', color: '#10B981' }
                             ].map((item, i) => (
                                 <div key={i} style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-                                    <div style={{ 
-                                        width: '72px', 
-                                        height: '72px', 
-                                        borderRadius: '24px', 
-                                        background: 'rgba(255,255,255,0.02)', 
-                                        border: '1px solid var(--border-glass)', 
-                                        display: 'flex', 
-                                        alignItems: 'center', 
-                                        justifyContent: 'center', 
+                                    <div style={{
+                                        width: '72px',
+                                        height: '72px',
+                                        borderRadius: '24px',
+                                        background: 'rgba(255,255,255,0.02)',
+                                        border: '1px solid var(--border-glass)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
                                         color: item.color,
                                         boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
                                     }}>
@@ -108,11 +108,11 @@ const ContactPage = () => {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        style={{ 
-                            background: 'rgba(15, 23, 42, 0.4)', 
-                            backdropFilter: 'blur(40px)', 
-                            padding: '50px', 
-                            borderRadius: '48px', 
+                        style={{
+                            background: 'rgba(15, 23, 42, 0.4)',
+                            backdropFilter: 'blur(40px)',
+                            padding: '50px',
+                            borderRadius: '48px',
                             border: '1px solid var(--border-glass)',
                             boxShadow: '0 50px 100px rgba(0,0,0,0.3)'
                         }}
@@ -158,12 +158,12 @@ const ContactPage = () => {
                 </div>
 
                 {/* Secure Protocol Section */}
-                <div style={{ 
-                    background: 'rgba(255, 255, 255, 0.015)', 
-                    borderRadius: '56px', 
-                    padding: '80px clamp(2rem, 6%, 4rem)', 
+                <div style={{
+                    background: 'rgba(255, 255, 255, 0.015)',
+                    borderRadius: '56px',
+                    padding: '80px clamp(2rem, 6%, 4rem)',
                     border: '1px solid var(--border-glass)',
-                    textAlign: 'center' 
+                    textAlign: 'center'
                 }}>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -182,17 +182,17 @@ const ContactPage = () => {
                             { step: "02", title: "Verify & Authorize", desc: "Upon acceptance, use our secure gateway to fulfill the connection protocol.", icon: <CreditCard size={24} /> },
                             { step: "03", title: "Direct Activation", desc: "Unlock direct encrypted channels for uninterrupted sporting professional contact.", icon: <CheckCircle size={24} /> }
                         ].map((step, i) => (
-                            <motion.div 
+                            <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                style={{ 
-                                    textAlign: 'left', 
-                                    background: 'rgba(255,255,255,0.02)', 
-                                    padding: '40px', 
-                                    borderRadius: '40px', 
+                                style={{
+                                    textAlign: 'left',
+                                    background: 'rgba(255,255,255,0.02)',
+                                    padding: '40px',
+                                    borderRadius: '40px',
                                     border: '1px solid rgba(255,255,255,0.06)',
                                     position: 'relative',
                                     overflow: 'hidden'
