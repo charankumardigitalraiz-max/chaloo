@@ -22,3 +22,4 @@ jobs:
             sudo cp -r dist/* /var/www/chalowebsitecoach/
             sudo chown -R www-data:www-data /var/www/chalowebsitecoach
             sudo systemctl reload nginx
+            
