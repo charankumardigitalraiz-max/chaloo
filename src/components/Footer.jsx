@@ -42,8 +42,8 @@ const Footer = () => {
                 {/* Brand */}
                 <div style={{ maxWidth: '360px' }}>
                     <div onClick={() => { navigate('/'); scrollToTop(); }} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', cursor: 'pointer' }}>
-                        <div style={{ width: '38px', height: '38px', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.12)', flexShrink: 0 }}>
-                            <img src="/logo.jpeg" alt="Chaloo Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <div style={{ width: '38px', height: '38px', borderRadius: '10px', overflow: 'hidden', flexShrink: 0 }}>
+                            <img src="/logo-latest1.png" alt="Chaloo Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                         <span style={{ fontSize: '1.6rem', fontWeight: '950', color: 'white', letterSpacing: '-0.04em' }}>
                             CHALOO<span style={{ color: 'var(--chalo-blue)' }}>.</span>

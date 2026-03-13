@@ -139,12 +139,13 @@ const Navbar = () => {
                                     }}
                                     whileTap={{ scale: 0.97 }}
                                 >
-                                    <span style={{
-                                        fontSize: '1.35rem',
-                                        fontWeight: '900',
-                                        color: isActive ? '#00D2FF' : 'white',
-                                        letterSpacing: '-0.02em'
-                                    }}>{link.name}</span>
+                                    <span
+                                        style={{
+                                            fontSize: '1.35rem',
+                                            fontWeight: '900',
+                                            color: isActive ? '#00D2FF' : 'white',
+                                            letterSpacing: '-0.02em'
+                                        }}>{link.name}</span>
                                     <ArrowRight size={20} color={isActive ? '#00D2FF' : 'rgba(255,255,255,0.4)'} />
                                 </motion.button>
                             );
@@ -174,7 +175,7 @@ const Navbar = () => {
                         >
                             Get in Touch <ArrowRight size={18} />
                         </button>
-                        <p style={{
+                        {/* <p style={{
                             textAlign: 'center',
                             color: 'rgba(255,255,255,0.25)',
                             fontSize: '0.7rem',
@@ -182,7 +183,7 @@ const Navbar = () => {
                             letterSpacing: '0.1em',
                             textTransform: 'uppercase',
                             marginTop: '20px'
-                        }}>CHALOO SPORTS HQ · AP, INDIA</p>
+                        }}>CHALOO SPORTS HQ · AP, INDIA</p> */}
                     </div>
                 </motion.div>
             )}
@@ -248,11 +249,11 @@ const Navbar = () => {
                             height: isScrolled ? '30px' : '38px',
                             borderRadius: '10px',
                             overflow: 'hidden',
-                            border: '1px solid rgba(255,255,255,0.12)',
+                            // border: '1px solid rgba(255,255,255,0.12)',
                             transition: 'all 0.4s ease',
                             flexShrink: 0
                         }}>
-                            <img src="/logo.jpeg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/logo-latest1.png" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                         <span style={{
                             fontSize: isScrolled ? '1rem' : '1.2rem',
