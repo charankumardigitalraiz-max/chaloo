@@ -117,7 +117,7 @@ const Footer = () => {
                     <Activity size={16} /> A New Era of Indian Sports
                 </div>
                 <p style={{ opacity: 0.5, fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: '600' }}>
-                    © 2024 CHALOO Sports HQ. All rights reserved.
+                    © 2026 UMAYUR. All rights reserved.
                 </p>
             </div>
 
