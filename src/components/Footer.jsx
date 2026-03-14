@@ -96,11 +96,11 @@ const Footer = () => {
                 <div>
                     <h4 style={{ color: 'var(--chalo-blue)', fontSize: '0.8rem', marginBottom: '24px', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Reach Us</h4>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        <a href="mailto:umanalli.123@gmail.com" style={{ color: 'white', fontSize: '0.9rem', textDecoration: 'none', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '12px', transition: 'all 0.3s ease' }} className="footer-link">
-                            <Mail size={16} color="var(--chalo-blue)" /> umanalli.123@gmail.com
+                        <a href="mailto:umayur2323@gmail.com" style={{ color: 'white', fontSize: '0.9rem', textDecoration: 'none', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '12px', transition: 'all 0.3s ease' }} className="footer-link">
+                            <Mail size={16} color="var(--chalo-blue)" /> umayur2323@gmail.com
                         </a>
                         <div style={{ color: 'white', fontSize: '0.9rem', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            <Phone size={16} color="var(--chalo-blue)" /> +91 8688047634
+                            <Phone size={16} color="var(--chalo-blue)" /> +91 8857802084
                         </div>
                         <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: '600', display: 'flex', alignItems: 'flex-start', gap: '12px', lineHeight: 1.5 }}>
                             <MapPin size={16} color="var(--chalo-blue)" style={{ marginTop: '2px', flexShrink: 0 }} />

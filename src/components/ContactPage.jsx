@@ -75,8 +75,8 @@ const ContactPage = () => {
                         <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: '950', marginBottom: '48px', color: 'white', letterSpacing: '-0.04em' }}>Corporate <br />Channels</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
                             {[
-                                { icon: Mail, label: 'Enterprise Email', value: 'umanalli.123@gmail.com', color: '#00D2FF' },
-                                { icon: Phone, label: 'Direct Hotline', value: '+91 8688047634', color: '#FACC15' },
+                                { icon: Mail, label: 'Enterprise Email', value: 'umayur2323@gmail.com', color: '#00D2FF' },
+                                { icon: Phone, label: 'Direct Hotline', value: '+91 8857802084', color: '#FACC15' },
                                 { icon: Globe, label: 'Global HQ', value: 'H No-8-1-106/A/43, Vinobha Nagar, Shaikpet, Nagamma Temple, Golconda, Hyderabad - 500008, Telangana.', color: '#10B981' }
                             ].map((item, i) => (
                                 <div key={i} style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
