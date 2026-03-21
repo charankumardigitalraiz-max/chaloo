@@ -23,8 +23,8 @@ const AppPromo = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    style={{ 
-                        width: '100%', 
+                    style={{
+                        width: '100%',
                         position: 'relative',
                         borderRadius: '32px',
                         overflow: 'hidden',
@@ -147,3 +147,4 @@ const AppPromo = () => {
 };
 
 export default AppPromo;
+//
