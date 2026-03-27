@@ -143,7 +143,7 @@ const PrivacyPolicy = () => {
                             letterSpacing: '0.1em'
                         }}
                     >
-                        <ShieldCheck size={14} /> UPDATED MARCH 2024
+                        <ShieldCheck size={14} /> UPDATED MARCH 2026
                     </motion.div>
 
                     <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: '950', color: 'white', marginBottom: '24px', letterSpacing: '-0.04em', lineHeight: 1 }}>
@@ -160,17 +160,18 @@ const PrivacyPolicy = () => {
             <div style={{ maxWidth: '950px', margin: '-60px auto 0', padding: '0 6%', position: 'relative', zIndex: 20 }}>
 
                 <AccordionItem
-                    title="1. Core Data Intelligence"
+                    title="1. Information We Collect"
                     icon={Database}
                     isOpen={openSection === 0}
                     onClick={() => toggleSection(0)}
                 >
-                    <p style={{ marginBottom: '20px' }}>To facilitate elite sports connectivity, we mobilize localized data parameters across player, coach, and academy profiles.</p>
+                    <p style={{ marginBottom: '20px' }}>To provide a verified and high-quality sports networking experience, we collect specific data points during registration:</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                         {[
-                            { label: 'Identity Clusters', desc: 'Secure encryption of names, contact protocols, and geographic coordinates.' },
-                            { label: 'Performance Metrics', desc: 'Skill level data, verified achievements, and professional coaching credentials.' },
-                            { label: 'Secure Ledger', desc: 'High-intent connection history and verified transaction logs for platform integrity.' }
+                            { label: 'Core Identity', desc: 'Legal name, verified mobile number, and email address for account security.' },
+                            { label: 'Professional Portfolio', desc: 'Expertise levels, years of experience, and specialized sports certifications (e.g., NIS certification for coaches).' },
+                            { label: 'Media Assets', desc: 'Profile photography, playing videos, and teaching demonstrations to verify athletic proficiency.' },
+                            { label: 'Sensitive Documents', desc: 'Identity verification documents (like Aadhaar) used strictly for internal verification and system integrity.' }
                         ].map((item, i) => (
                             <div key={i} style={{ display: 'flex', gap: '16px' }}>
                                 <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--chalo-blue)', marginTop: '10px', flexShrink: 0 }} />
@@ -181,18 +182,18 @@ const PrivacyPolicy = () => {
                 </AccordionItem>
 
                 <AccordionItem
-                    title="2. Strategic Data Application"
+                    title="2. Strategic Data Usage"
                     icon={User}
                     isOpen={openSection === 1}
                     onClick={() => toggleSection(1)}
                 >
-                    <p style={{ marginBottom: '20px' }}>Your data is strictly utilized to optimize the CHALOO ecosystem and facilitate professional matching.</p>
+                    <p style={{ marginBottom: '20px' }}>Your data is utilized to facilitate professional connections and maintain the CHALOO ecosystem:</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                         {[
-                            'High-precision matchmaking based on athletic discipline and geographic proximity.',
-                            'Rigorous identity verification to maintain a verified network of elite experts.',
-                            'Secure processing of connection fees via encrypted banking gateways.',
-                            'Proactive dispute resolution and enterprise-tier support protocols.'
+                            'High-precision matchmaking between players, coaches, fitness trainers, and academies.',
+                            'Geolocation-based discovery to help you find sports opportunities in your city and state.',
+                            'Payment processing for connection and registration fees via secure, encrypted gateways.',
+                            'Verification of professional credentials to ensure a trusted network of sports experts.'
                         ].map((item, i) => (
                             <div key={i} style={{ display: 'flex', gap: '16px' }}>
                                 <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--chalo-emerald)', marginTop: '10px', flexShrink: 0 }} />
@@ -203,35 +204,35 @@ const PrivacyPolicy = () => {
                 </AccordionItem>
 
                 <AccordionItem
-                    title="3. Encryption & Disclosure Control"
+                    title="3. Protection & Disclosure"
                     icon={Lock}
                     isOpen={openSection === 2}
                     onClick={() => toggleSection(2)}
                 >
-                    <p style={{ margin: 0 }}>CHALOO implements a strict <strong>Zero-Leak</strong> protocol. Direct contact credentials (VOIP/Email) are never publicly exposed. Data activation only occurs after mutual intent verification and successful connection protocol fulfillment. This eliminates unsolicited contact and ensures high-quality networking.</p>
+                    <p style={{ margin: 0 }}>CHALOO adheres to strict disclosure controls. Your sensitive identity documents are never shared with other users. Direct contact details (Mobile/Email) are only shared between parties after a mutual connection request has been fulfilled. This protocol prevents spam and ensures that your privacy is maintained throughout your browsing experience.</p>
                 </AccordionItem>
 
                 <AccordionItem
-                    title="4. Architectural Security Standard"
+                    title="4. Financial Security"
                     icon={ShieldCheck}
                     isOpen={openSection === 3}
                     onClick={() => toggleSection(3)}
                 >
-                    <p style={{ margin: 0 }}>Our infrastructure employs military-grade encryption and strict tiered access controls. We maintain active monitoring systems to intercept unauthorized access attempts and preserve the integrity of India's premier sporting network.</p>
+                    <p style={{ margin: 0 }}>All registration and booking transactions are processed through verified third-party payment aggregators. CHALOO does not store your full card details or net banking credentials on its own servers, ensuring that your financial data remains under the protection of bank-grade security systems.</p>
                 </AccordionItem>
 
                 <AccordionItem
-                    title="5. User Rights & Data Autonomy"
+                    title="5. User Control & Deletion"
                     icon={Scale}
                     isOpen={openSection === 4}
                     onClick={() => toggleSection(4)}
                 >
-                    <p style={{ marginBottom: '24px' }}>You maintain complete sovereignty over your athletic profile and historical data.</p>
+                    <p style={{ marginBottom: '24px' }}>You maintain complete sovereignty over your data within the CHALOO platform.</p>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
                         {[
-                            { title: 'Real-time Updates', desc: 'Securely modify profile parameters via the Command Hub.' },
-                            { title: 'Data Portability', desc: 'Request a full export of your interaction ledger at any time.' },
-                            { title: 'Termination Protocol', desc: 'Initialize total account erasure from active servers permanently.', danger: true }
+                            { title: 'Profile Management', desc: 'Securely update your skills, experience, and contact info at any time.' },
+                            { title: 'Data Privacy', desc: 'Opt to hide your phone number from public view even after connection.' },
+                            { title: 'Account Erasure', desc: 'Permanently delete your account and all associated data via our global deletion link.', danger: true }
                         ].map((item, i) => (
                             <div key={i} style={{ padding: '24px', background: 'rgba(255,255,255,0.02)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.05)' }}>
                                 <strong style={{ display: 'block', color: item.danger ? '#EF4444' : 'white', marginBottom: '8px', fontSize: '1rem' }}>{item.title}</strong>
