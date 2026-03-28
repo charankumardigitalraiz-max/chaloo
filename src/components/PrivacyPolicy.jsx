@@ -151,7 +151,7 @@ const PrivacyPolicy = () => {
                     </h1>
 
                     <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto', fontWeight: '500' }}>
-                        At CHALOO, absolute trust is the core of our enterprise. We secure your professional athletic data with architectural precision.
+                        CHALOO is a professional sports networking platform by <span style={{ color: 'white', fontWeight: '700' }}>UMAYUR</span>, published and operated by <span style={{ color: 'white', fontWeight: '700' }}>digitalraiz creative solutions</span>. We secure your professional athletic data with architectural precision.
                     </p>
                 </div>
             </section>
@@ -242,6 +242,17 @@ const PrivacyPolicy = () => {
                     </div>
                 </AccordionItem>
 
+                <AccordionItem
+                    title="6. Developer Information"
+                    icon={Shield}
+                    isOpen={openSection === 5}
+                    onClick={() => toggleSection(5)}
+                >
+                    <p style={{ margin: 0 }}>
+                        The CHALOO mobile application is provided by <strong style={{ color: 'white' }}>UMAYUR</strong>, and is published and maintained by <strong style={{ color: 'white' }}>digitalraiz creative solutions</strong>. For any legal or privacy-related inquiries regarding our entity, you may reach out to us through our official support channels.
+                    </p>
+                </AccordionItem>
+
                 {/* Support Card */}
                 <div style={{
                     marginTop: '60px',
@@ -273,7 +284,7 @@ const PrivacyPolicy = () => {
                     <div style={{ flex: 1, minWidth: '280px' }}>
                         <h3 style={{ fontSize: '1.6rem', fontWeight: '950', color: 'white', marginBottom: '12px', letterSpacing: '-0.02em' }}>Privacy Command Center</h3>
                         <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6 }}>
-                            For sensitive data inquiries or security audit requests, contact our specialized protocol team at <a href="mailto:chalosportsapp@gmail.com" style={{ color: 'var(--chalo-blue)', fontWeight: '800', textDecoration: 'none' }}>chalosportsapp@gmail.com</a>.
+                           CHALOO is provided by <span style={{ color: 'white', fontWeight: '700' }}>digitalraiz creative solutions</span>. For sensitive data inquiries or security audit requests, contact our specialized protocol team at <a href="mailto:chalosportsapp@gmail.com" style={{ color: 'var(--chalo-blue)', fontWeight: '800', textDecoration: 'none' }}>chalosportsapp@gmail.com</a>.
                         </p>
                     </div>
                 </div>

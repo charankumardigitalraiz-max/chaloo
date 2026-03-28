@@ -151,7 +151,7 @@ const TermsConditions = () => {
                     </h1>
 
                     <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto', fontWeight: '500' }}>
-                        Join the CHALOO ecosystem with a commitment to sporting excellence and professional conduct.
+                        CHALOO is a professional sports networking platform by <span style={{ color: 'white', fontWeight: '700' }}>UMAYUR</span>, published and operated by <span style={{ color: 'white', fontWeight: '700' }}>digitalraiz creative solutions</span>. Join the ecosystem with a commitment to sporting excellence and professional conduct.
                     </p>
                 </div>
             </section>
@@ -274,7 +274,7 @@ const TermsConditions = () => {
                     <div style={{ flex: 1, minWidth: '280px' }}>
                         <h3 style={{ fontSize: '1.6rem', fontWeight: '950', color: 'white', marginBottom: '12px', letterSpacing: '-0.02em' }}>Dispute Resolution</h3>
                         <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6 }}>
-                            For payment anomalies or connection quality audits, contact our specialized protocol team within 48 hours at <a href="mailto:chalosportsapp@gmail.com" style={{ color: 'var(--chalo-blue)', fontWeight: '800', textDecoration: 'none' }}>chalosportsapp@gmail.com</a>.
+                            CHALOO is provided by <span style={{ color: 'white', fontWeight: '700' }}>UMAYUR</span> and published by <span style={{ color: 'white', fontWeight: '700' }}>digitalraiz creative solutions</span>. For payment anomalies or connection quality audits, contact our specialized protocol team within 48 hours at <a href="mailto:chalosportsapp@gmail.com" style={{ color: 'var(--chalo-blue)', fontWeight: '800', textDecoration: 'none' }}>chalosportsapp@gmail.com</a>.
                         </p>
                     </div>
                 </div>
