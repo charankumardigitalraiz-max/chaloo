@@ -90,17 +90,17 @@ const TermsConditions = () => {
         <div style={{ minHeight: '100vh', background: 'var(--chalo-bg)', paddingBottom: '120px' }}>
 
             {/* Premium Header */}
-            <section style={{ 
-                paddingTop: '160px', 
-                paddingBottom: '120px', 
-                position: 'relative', 
+            <section style={{
+                paddingTop: '160px',
+                paddingBottom: '120px',
+                position: 'relative',
                 overflow: 'hidden',
                 textAlign: 'center',
                 background: 'linear-gradient(to bottom, rgba(2, 6, 23, 0.4) 0%, var(--chalo-bg) 100%)'
             }}>
                 {/* Background Glows */}
                 <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: '100%', background: 'radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.08) 0%, transparent 70%)', zIndex: 0 }} />
-                
+
                 <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 10, paddingInline: '6%' }}>
                     <button
                         onClick={() => navigate('/')}
@@ -128,16 +128,16 @@ const TermsConditions = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        style={{ 
-                            display: 'inline-flex', 
-                            alignItems: 'center', 
-                            gap: '10px', 
-                            color: 'var(--chalo-blue)', 
-                            background: 'rgba(0, 210, 255, 0.1)', 
-                            padding: '6px 20px', 
-                            borderRadius: '100px', 
-                            fontWeight: '900', 
-                            fontSize: '0.75rem', 
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '10px',
+                            color: 'var(--chalo-blue)',
+                            background: 'rgba(0, 210, 255, 0.1)',
+                            padding: '6px 20px',
+                            borderRadius: '100px',
+                            fontWeight: '900',
+                            fontSize: '0.75rem',
                             marginBottom: '24px',
                             border: '1px solid rgba(0, 210, 255, 0.15)',
                             letterSpacing: '0.1em'
@@ -274,7 +274,7 @@ const TermsConditions = () => {
                     <div style={{ flex: 1, minWidth: '280px' }}>
                         <h3 style={{ fontSize: '1.6rem', fontWeight: '950', color: 'white', marginBottom: '12px', letterSpacing: '-0.02em' }}>Dispute Resolution</h3>
                         <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6 }}>
-                            CHALOO is provided by <span style={{ color: 'white', fontWeight: '700' }}>UMAYUR</span> and published by <span style={{ color: 'white', fontWeight: '700' }}>digitalraiz creative solutions</span>. For payment anomalies or connection quality audits, contact our specialized protocol team within 48 hours at <a href="mailto:chalosportsapp@gmail.com" style={{ color: 'var(--chalo-blue)', fontWeight: '800', textDecoration: 'none' }}>chalosportsapp@gmail.com</a>.
+                            CHALOO is provided by <span style={{ color: 'white', fontWeight: '700' }}>UMAYUR</span> and published by <span style={{ color: 'white', fontWeight: '700' }}>digitalraiz creative solutions</span>. For payment anomalies or connection quality audits, contact our specialized protocol team within 48 hours at <a href="mailto:umayur2323@gmail.com" style={{ color: 'var(--chalo-blue)', fontWeight: '800', textDecoration: 'none' }}>umayur2323@gmail.com</a>.
                         </p>
                     </div>
                 </div>
